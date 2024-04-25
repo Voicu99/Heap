@@ -31,9 +31,9 @@ int main()
 	int* numar = new int();
 	//Enemy e = Enemy(); e  este pe stiva -> destructor chemat automat la sfarsitul lui main
 	Enemy* inamic = new Enemy(); // inamicul a fost creat pe heap si nu este  distrus
-	//delete inamic; // delete va chema destructorul inamicului
-
-	Enemy* inamic_2 = new Enemy();
+	delete inamic; // delete va chema destructorul inamicului
+	Enemy* inamic_2 = nullptr;
+    inamic_2 = new Enemy();
 	inamic_2->m_name = "DarthVader";
 
 
@@ -46,6 +46,12 @@ int main()
 	{
 		std::cout<< "Ai castigat , il chilarim pe DarthVader\n";
 		delete inamic_2;
+		inamic_2 = nullptr;
 	}
+
+
+	//daca inamicul inca este in viata il stergem
+	if (inamic_2 != nullptr)
+		delete inamic_2;
 
 }
