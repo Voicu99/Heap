@@ -31,5 +31,21 @@ int main()
 	int* numar = new int();
 	//Enemy e = Enemy(); e  este pe stiva -> destructor chemat automat la sfarsitul lui main
 	Enemy* inamic = new Enemy(); // inamicul a fost creat pe heap si nu este  distrus
-	delete inamic; // delete va chema destructorul inamicului
+	//delete inamic; // delete va chema destructorul inamicului
+
+	Enemy* inamic_2 = new Enemy();
+	inamic_2->m_name = "DarthVader";
+
+
+	std::cout << "Te lupti cu DarthVader , ce power level ai? " << std::endl;
+	int power_level;
+	std::cin >> power_level;
+
+
+	if (power_level > 10)
+	{
+		std::cout<< "Ai castigat , il chilarim pe DarthVader\n";
+		delete inamic_2;
+	}
+
 }
