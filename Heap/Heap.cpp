@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include <string>
+#include <vector>
 
 class Enemy
 {
@@ -35,10 +36,37 @@ public:
 	{
 		std::cout << "Item " << m_item_name << " was destroyed\n";
 	}
+
+	std::string getItemName()
+	{
+		return m_item_name;
+	}
 private:
 	std::string m_item_name;
 };
 
+class Player {
+public:
+	Player(std::string player_name) : m_player_name(player_name)
+	{
+		std::cout << "Player " << m_player_name << " has joined\n";
+	}
+	void add_item(Item* item)
+	{
+		std::cout << "Do you want to store this item? " << item->getItemName() << std::endl;
+		std::cout << "YES or NO\n";
+		std::string raspuns;
+		std::cin >> raspuns;
+		if (raspuns == "YES")
+		{
+			m_invetory.push_back(item);
+		}
+	}
+
+private:
+	std::string m_player_name;
+	std::vector<Item*> m_invetory;
+};
 
 
 
