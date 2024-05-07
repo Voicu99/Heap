@@ -68,6 +68,15 @@ private:
 	std::vector<Item*> m_invetory;
 };
 
+Item* generateItem()
+{
+	std::string item_name;
+	std::cout << "What should the item name be? \n";
+	std::cin >> item_name;
+	Item* item = new Item(item_name);
+	return item;
+
+}
 
 
 int main()
