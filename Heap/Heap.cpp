@@ -24,6 +24,24 @@ Enemy createEnemy()
 	return e;
 }
 
+
+class Item {
+public:
+	Item(std::string intem_name) : m_item_name(intem_name)
+	{
+		std::cout << "Item " << m_item_name << " was created\n";
+	}
+	~Item()
+	{
+		std::cout << "Item " << m_item_name << " was destroyed\n";
+	}
+private:
+	std::string m_item_name;
+};
+
+
+
+
 int main()
 {
 	//Enemy  inamic = createEnemy();
